@@ -39,9 +39,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-var marker = L.marker([45.771804, 4.863433]).addTo(map).bindPopup("<b>Com on Jam!</b><br>A guitarist is here.").openPopup();
+var marker = L.marker([45.771804, 4.863433]).addTo(map).bindPopup("<p><b>Com on Jam!</b><br>A guitarist is here.</p>").openPopup();
 marker._icon.classList.add("huechange");
-var marker = L.marker([45.77093524067551, 4.874627953425062]).addTo(map).bindPopup("<b>Com on Jam!</b><br>A guitarist is here.").openPopup();
+var marker = L.marker([45.77093524067551, 4.874627953425062]).addTo(map).bindPopup("<p><b>Com on Jam!</b><br>A guitarist is here.</p>").openPopup();
 marker._icon.classList.add("huechange");
 var circle = L.circle([45.767167, 4.856512], {
     color: 'red',
@@ -49,22 +49,28 @@ var circle = L.circle([45.767167, 4.856512], {
     fillOpacity: 0.5,
     radius: 200
 }).addTo(map);
-circle.bindPopup("Many Pub good for concert.");
+circle.bindPopup("<p>Many Pub good for concert.</p>");
 var circle = L.circle([45.760079, 4.819749], {
     color: 'yellow',
     fillColor: '#efd807',
     fillOpacity: 0.5,
     radius: 50
 }).addTo(map);
-circle.bindPopup("A big dream to play here.");
-
+circle.bindPopup("<p>A big dream to play here.</p>");
+var polygon = L.polygon([
+    [45.776838, 4.844117],
+    [45.782993, 4.847791],
+    [45.784584, 4.859812],
+    [45.772552, 4.858317]
+]).addTo(map);
+polygon.bindPopup("<p>Play like a hippy.</p>");
 //locate
 map.locate({ setView: true, maxZoom: 16 });
 
 function onLocationFound(e) {
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("<p>You are here<p>").openPopup();
+        .bindPopup("<p>You are here</p>").openPopup();
 }
 
 map.on('locationfound', onLocationFound);
