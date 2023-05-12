@@ -49,7 +49,7 @@ var circle = L.circle([45.767167, 4.856512], {
     fillOpacity: 0.5,
     radius: 200
 }).addTo(map);
-circle.bindPopup("Lot of Pub good for concert.");
+circle.bindPopup("Many Pub good for concert.");
 var circle = L.circle([45.760079, 4.819749], {
     color: 'yellow',
     fillColor: '#efd807',
@@ -64,7 +64,7 @@ map.locate({ setView: true, maxZoom: 16 });
 function onLocationFound(e) {
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("Vous etes ici").openPopup();
+        .bindPopup("<p>You are here<p>").openPopup();
 }
 
 map.on('locationfound', onLocationFound);
